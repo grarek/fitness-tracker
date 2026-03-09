@@ -1,0 +1,11 @@
+services:
+  fitness-tracker:
+    image: fitness-tracker:latest
+    build: .
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./data:/app/data
+    env_file:
+      - .env
+    restart: unless-stopped
